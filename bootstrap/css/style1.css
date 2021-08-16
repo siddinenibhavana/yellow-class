@@ -1,0 +1,137 @@
+.bg-b{
+  background:black;
+
+}
+.bg-bl{
+  background-color: rgba(0, 0, 0, 0.5);
+
+}
+.fullscreen-landing{
+  background:white url("../../images1/mlbackground.jpg") no-repeat scroll center;
+  height:100vh;
+  background-size:cover;
+}
+.fullscreen-landing1{
+  background: white url("../../images1/log.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  font-family: 'Numans', sans-serif;
+}
+.carousel .carousel-item {
+  height: 500px;
+
+}
+.carousel-item img {
+    position: absolute;
+    object-fit:cover;
+    top: 0;
+    left: 0;
+    min-height: 400px;
+}
+.carousel-caption{
+  bottom:200px;
+  left:50px;
+}
+.card{
+  width: 100vh;
+  height:500px;
+}
+.display-4{
+  font-size:2vw;
+}
+.lead{
+  font-size:1.25vw;
+}
+.fullscreen-landing2{
+  background:white url("../../images1/cam.jpg") no-repeat scroll center;
+  height:100vh;
+  background-size:cover;
+}
+.container1{
+  height: 100%;
+  align-content:center;
+  }
+  
+  .card{
+  height: 580px;
+  margin-top: auto;
+  margin-bottom: auto;
+  left:10%;
+  width: 400px;
+  background-color: rgba(0,0,0,0.5) !important;
+  }
+  
+  .social_icon span{
+  font-size: 60px;
+  margin-left: 10px;
+  color: #5caabf;
+  }
+  
+  .social_icon span:hover{
+  color: white;
+  cursor: pointer;
+  }
+  
+  .card-header h3{
+  color: white;
+  }
+  
+  .social_icon{
+  position: absolute;
+  right: 20px;
+  top: -45px;
+  }
+  
+  .input-group-prepend span{
+  width: 50px;
+  background-color:#5caabf;
+  color: black;
+  border:0 !important;
+  }
+  
+  input:focus{
+  outline: 0 0 0 0  !important;
+  box-shadow: 0 0 0 0 !important;
+  
+  }
+  
+  .remember{
+  color: white;
+  }
+  
+  .remember input
+  {
+  width: 20px;
+  height: 20px;
+  margin-left: 15px;
+  margin-right: 5px;
+  }
+  
+  .login_btn{
+  color: black;
+  background-color:#5caabf;
+  width: 150px;
+  }
+  
+  .login_btn:hover{
+  color: black;
+  background-color:white;
+  }
+  .btnmain{
+    background:#ffc107;
+    color:#000;
+    
+  }
+  .btnmain:hover{
+    background:#fb2525;
+    color:#fff;
+  }
+  .links{
+  color: white;
+  }
+  
+  .links a{
+  margin-left: 4px;
+  }
+  

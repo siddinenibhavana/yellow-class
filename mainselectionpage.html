@@ -1,0 +1,144 @@
+<?php session_start();
+require_once('connection.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS Files -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://fontawesome.com/v4.7.0/icons/">
+    <link rel="stylesheet" href="bootstrap/css/font-awesome-5.8.1.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/mdb.css">
+    <link rel="stylesheet" href="bootstrap/css/style1.css">
+    <link rel="stylesheet" href="bootstrap/css/style2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>365movies.com</title>
+    <link rel = "icon" href ="images1/images.png" type = "image/png"> 
+<style>
+div.ex1 {
+  height: 500px;
+  width:950px;
+  overflow-x:hidden;
+  overflow-y:scroll;
+}
+.container2{
+    height:80%;
+    width:100vw;
+  }
+
+</style>
+
+</head>
+<body>
+    <!--navbar-->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-b">
+        <div class="container">
+            <a href="index1.html" class="navbar-brand text-white"><img src="images1/images.png" width="40" height="40" class = "rounded-circle" alt = "Rounded Image">&emsp;<img src="images1/title.gif" width="300" height="60"></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#travel-navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="travel-navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item px-3">
+                        <a href="Index1.html" class="nav-link"><i class="fa fa-home fa-0.5x m-3"></i>Home</a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a href="#" class="nav-link"><i class="fa fa-info-circle fa-0.5x m-3"></i>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--movielist area-->
+    <section class="fullscreen-landing text-white"><br><br>
+        <div class="container2 bg-b">
+            <div class="block-header">
+                <div class="row">
+                    <div class="col-lg-5 col-md-8 col-sm-12">                      
+                        <h2>MOVIELIST</h2> <form class="form-inline" name="S" action="loginnext.html" method="GET"><input type='submit' value='submit' style="align:right"> </form>
+                    </div>        
+                </div>
+            </div>
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="table-wrapper">
+                            <div class="ex1">
+                                <table id="example" class="table table-hover text-white table-striped mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">S.NO</th>
+                                            <th scope="col">POSTER</th>
+                                            <th scope="col">MOVIENAME</th>
+                                            <th scope="col">ACTOR</th>
+                                            <th scope="col">DIRECTOR</th>
+                                            <th scope="col">SELECT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+                                        <?php
+                                        $sql="SELECT * from movielist";
+                                        $query = $dbh -> prepare($sql);
+                                        $query->execute();
+                                        $results=$query->fetchAll(PDO::FETCH_OBJ);
+                                        $cnt=1;
+                                        
+                                    
+
+                                        if($query->rowCount() > 0)
+                                        {
+                                            foreach($results as $row)
+                                            {   ?>
+                                            <tr>
+                                                <td><?php echo htmlentities($cnt);?></td>
+                                                <td><?php  echo '<img src="posters/'.$row->moviename.'.jpg" type="image/jpg" width="125" height="125" >';?></td>
+                                                <td><?php  echo htmlentities($row->moviename);?></td>
+                                                <td><?php  echo htmlentities($row->actor);?></td>
+                                                <td><?php  echo htmlentities($row->director);?></td>
+                                                <td>
+                                                   <!--  <input type="checkbox" name="L[]">  -->
+                                                   <input type="hidden" name="button_value" value=""  id="hidden_value" />
+                                                    <button type="button" class="btnmain" onclick="javascript:submit_form('yes');">Yes</button>
+                                                    <button type="button" class="btnmain" onclick="javascript:submit_form('no');">No</button>
+                                                </td>
+                                            </tr>
+                                            <?php $cnt=$cnt+1;}} ?>         
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+    <!--main footer-->
+    <footer class="bg-b text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4 class="font-weight-bold"><i class="fa fa-film fa-1x m-3"></i>Follow 365Movies.com</h4>
+                    <a href="#"><i class="fab fa-facebook-square fa-2x m-2"></i></a>
+                    <a href="#"><i class="fab fa-youtube fa-2x m-3"></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x m-3"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-2x m-3"></i></a>
+                    <h6>Copyright &copy; 2020 , 365Movies.com Pvt Ltd<br>All Rights Reserved<br>Developed & Maintained by Ml group</h6>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- Bootstrap Js files -->
+<script src="bootstrap/js/jquery.js"></script>  
+<script src="bootstrap/js/popper.min.js"></script>
+<script src="bootstrap/js/bootstrap.js"></script>
+<script src="bootstrap/js/mdb.js"></script>
+</body>
+</html>

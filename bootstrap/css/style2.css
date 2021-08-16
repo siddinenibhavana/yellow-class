@@ -1,0 +1,116 @@
+.card{
+    height: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    left:25%;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    }
+    
+     
+    .social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #ffc107;
+    }
+    
+    .social_icon span:hover{
+    color: white;
+    cursor: pointer;
+    }
+    
+    .card-header h3{
+    color: white;
+    }
+    
+    .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+    }
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color:#ffc107;
+    color: black;
+    border:0 !important;
+    }
+    
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    
+    .remember{
+    color: white;
+    }
+    
+    .remember input
+    {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+    }
+    
+    .login_btn{
+    color: black;
+    background-color:#ffc107;
+    width: 150px;
+    }
+    
+    .login_btn:hover{
+    color: black;
+    background-color:white;
+    }
+    .btnmain{
+      background:#ffc107;
+      color:#000;
+      
+    }
+    .btnmain:hover{
+      background:#ffc107;
+      color:#fff;
+    }
+    .links{
+    color: white;
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }
+
+
+    .horizontal-card {
+      position: relative;
+      display: flex;
+      border: 1px solid gray;
+      margin-bottom: 1rem;
+    }
+    .horizontal-card img {
+      width: 200px;
+      height: 130px;
+      border-bottom: 30px solid orange;
+    }
+    .horizontal-card .horizontal-card-body {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+    }
+    .horizontal-card .horizontal-card-footer {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+    .horizontal-card .horizontal-card-footer span {
+      width: 200px;
+      display: inline-block;
+    }
+    .horizontal-card .horizontal-card-footer a {
+      margin-left: 10px;
+    }
